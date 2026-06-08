@@ -126,6 +126,16 @@ def generate_row(rng):
         "model_disagreement_ratio": round(max(rate_dw1975, rate_dw1995) /
                                            max(min(rate_dw1975, rate_dw1995), 1e-9), 4),
         "regime": classify_regime(T_C, pCO2),
+        # --- Per-row provenance: which published, citable equation produced
+        # each value (reference IDs match references/references.csv). This
+        # dataset is MODEL-DERIVED from these cited correlations, not raw
+        # experimental measurements -- see dataset/README.md and the paper's
+        # "Dataset Construction (Transparency Statement)" section.
+        "source_dewaard1975_refs": "R017;R018;R020;R021;R022;R023",
+        "source_dewaard1995_refs": "R020",
+        "source_flow_correction_refs": "R064",
+        "source_salinity_correction_refs": "R109;R110;R111;R112;R113;R114;R115",
+        "source_operating_ranges_refs": "R024;R025;R026;R027;R028;R006;R039",
     }
 
 

@@ -7,17 +7,22 @@ infrastructure). It contains:
 ```
 co2_corrosion_project/
 ├── references/
-│   ├── references.csv      162 catalogued literature sources (titles, links, categories, notes)
-│   └── README.md           methodology + IMPORTANT access-limitation statement — read first
+│   ├── references.csv          162 catalogued literature sources (titles, links, categories, notes)
+│   └── README.md               methodology + IMPORTANT access-limitation statement — read first
 ├── dataset/
-│   ├── generate_dataset.py builds a transparent, physics-based dataset from
-│   │                       published empirical CO2-corrosion correlations
-│   └── co2_corrosion_dataset.csv   6,000-row generated dataset
+│   ├── generate_dataset.py     builds the transparent, physics-based dataset from
+│   │                           published empirical CO2-corrosion correlations
+│   ├── co2_corrosion_dataset.csv   6,000-row generated dataset (each row carries
+│   │                           reference-ID columns citing the exact equations used)
+│   └── README.md               column-by-column provenance: which reference backs each value
 ├── model/
-│   └── train_model.py      dependency-free random-forest regressor + regime analysis
+│   ├── train_model.py          CLI script: dependency-free random-forest regressor + regime analysis
+│   └── co2_corrosion_analysis.ipynb   the SAME pipeline as an executable Jupyter notebook
+│                               (dataset generation -> citation lookup -> training -> regime analysis)
 └── paper/
-    └── high_level_paper.md the write-up: literature review, methodology,
-                            results, and the research gap this project surfaces
+    ├── high_level_paper.md     the write-up: literature review, methodology,
+    │                           results, and the research gap this project surfaces
+    └── high_level_paper.docx   Word version of the same paper
 ```
 
 ## tl;dr — what this is and isn't
